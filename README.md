@@ -18,7 +18,8 @@ Open http://localhost:5173.
 | Role  | Login                       | Password      |
 |-------|-----------------------------|---------------|
 | Admin | admin@nestmate.test         | admin123      |
-| User  | ananya@nestmate.test (also rohan@, meera@, karan@) | password123 |
+| Demo Users | ananya@nestmate.test (also rohan@, meera@, karan@) | password123 |
+| Extended Users (40) | `<firstname>.<lastname>@nestmate.test` (e.g. aditya.nair@, aryan.malhotra@, nikhil.kulkarni@, karthik.varma@, varun.aggarwal@) | password123 |
 
 Production: `npm run build` then `npm start`. Express serves `client/dist` itself.
 
@@ -61,11 +62,11 @@ PUT    /api/admin/reports/:id
 ## Layout
 
 ```
-server/  models/ controllers/ routes/ middleware/ utils/compatibility.js seed.js server.js
+server/  models/ controllers/ routes/ middleware/ utils/compatibility.js seed.js seedData.js server.js
 client/  src/pages/ src/components/ src/context/ src/styles.css
 ```
 
 ## Notes
 - Admins can't be created through registration. Promote someone from the Users page, or use the seeded admin.
 - Uploaded images are stored on local disk in `server/uploads`. For production, swap `middleware/upload.js` for S3 or Cloudinary.
-- Currency is ₹ and demo data is Bengaluru; change `money()` in `client/src/utils.js` for other markets.
+- Currency is ₹ and seeded demo data spans 5 major Indian tech hubs: Bengaluru, Mumbai, Pune, Hyderabad, and Delhi NCR; change `money()` in `client/src/utils.js` for other markets.
